@@ -36,3 +36,5 @@ A topological sorting of this graph is: 1 2 3 4 5.
 There are multiple topological sorting possible for a graph. For the graph given above one another topological sorting is: 1 2 3 5 4.
 
 **Time Complexity** = O(V + E)
+
+For topological sort for direted acyclic graph you can refer to [click here](https://cp-algorithms.com/graph/topological-sort.html)
