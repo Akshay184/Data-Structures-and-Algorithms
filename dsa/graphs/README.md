@@ -41,5 +41,11 @@ For topological sort for direted acyclic graph you can refer to [click here](htt
 
 ## SSSP on DAG
 
-The single source shortest path (SSSP) problem can be solved efficiently on a DAG in **O(V + E)** time. This is due to the fact that the nodes can be ordered in a topological ordering via toposort and processed sequentially. After find the topological order we can assign each vertex an infinite weight except for the starting one and then apply the relaxation in a sequential manner to get the shortest path.
+The single source shortest path (SSSP) problem can be solved efficiently on a DAG in **O(V + E)** time. This is due to the fact that the nodes can be ordered in a topological ordering via toposort and processed sequentially. 
+
+After find the topological order we can assign each vertex an infinite weight except for the starting one and then apply the relaxation in a sequential manner to get the shortest path.
+
+## Longest Path in DAG
+
+It is similar to **SSSP on DAG** but what we do here is we multiply each edge weight with -1 and then calculate SSSP and after getting the weight array we again multily it by -1.
 
