@@ -5,15 +5,17 @@
 using namespace std;
 
 const int N = 2e5 + 10;
+const int INF = 1e9 + 10;
 
-vector<int> adj[N];
+vector<pair<int, int>> adj[N];
 vector<bool> visited(N);
 vector<int> order;
+
 
 void dfs(int source)
 {
 	visited[source] = true;
-	for(int u : adj[source])
+	for(auto [u, v] : adj[source])
 	{
 		if(visited[u])
 		{
@@ -38,6 +40,20 @@ void toposort(int n)
 	reverse(order.begin(), order.end());
 }
 
+vector<int> SSSP(int n)
+{
+	vector<int> length(n + 1, INF);
+	length[*order.begin()] = 0;
+	for(auto i : order)
+	{
+		for(auto [u, w] : adj[i])
+		{
+			length[u] = min(length[u], length[i] + w);
+		}
+	}
+	return length;
+}
+
 int main() {
 	ios_base::sync_with_stdio(false);
 	cin.tie(NULL);
@@ -49,11 +65,21 @@ int main() {
 	cin >> n >> m;
 	for(int i = 0; i < m; i++)
 	{
-		int a, b;
-		cin >> a >> b;
-		adj[a].push_back(b);
+		int a, b, w;
+		cin >> a >> b >> w;
+		adj[a].push_back({b, w});
 	}
+	// toposort for DAG to get the topological ordering
 	toposort(n);
+	
+	// appling SSSP
+	vector<int> length = SSSP(n);
+	
+	for(int i = 1; i <= n; i++)
+	{
+		cout << length[i] << " ";
+	}
+	
 	
 	
 	return 0;
