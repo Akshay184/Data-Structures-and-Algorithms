@@ -56,7 +56,7 @@ bool bellman_ford(int n, int start)
 				dist[edge[j].to] = -INF;
 				p[edge[j].to] = edge[j].from;
 				operation = true;
-			}gir
+			}
 		}
 		if(!operation)
 			break;
