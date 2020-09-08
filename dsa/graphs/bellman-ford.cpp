@@ -5,7 +5,7 @@
 using namespace std;
 
 const int N = 2e5 + 10;
-const long long INF = 100;
+const long long INF = 1e18;
 
 struct edg 
 {
@@ -56,7 +56,7 @@ bool bellman_ford(int n, int start)
 				dist[edge[j].to] = -INF;
 				p[edge[j].to] = edge[j].from;
 				operation = true;
-			}
+			}gir
 		}
 		if(!operation)
 			break;
