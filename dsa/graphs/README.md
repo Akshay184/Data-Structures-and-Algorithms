@@ -59,3 +59,5 @@ Dijkstra's algorithm is a single source shortest path (SSSP) algorithm with grap
 - We can use data stuctures which can perform both operation insertion and updation in **O(logn)** time. In C++ we have two such data-structure **set and priority queue**. But the problem with priority queue is that it does not support the operation of removing an element that leads to a significant worse factor **log(E)** instead of **log(V)** (although in terms of complexity they are identical).
 
 - We can improve the performance a little bit more if you don't store pairs in the containers, but only the vertex indices. In this case we must overload the comparison operator: it must compare two vertices using the distances stored in d[].
+
+For more information about Dijkstra's algorithm refer to [1](https://cp-algorithms.com/graph/dijkstra.html) [2](https://cp-algorithms.com/graph/dijkstra_sparse.html)
