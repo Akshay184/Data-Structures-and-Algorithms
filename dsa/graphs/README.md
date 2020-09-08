@@ -61,3 +61,7 @@ Dijkstra's algorithm is a single source shortest path (SSSP) algorithm with grap
 - We can improve the performance a little bit more if you don't store pairs in the containers, but only the vertex indices. In this case we must overload the comparison operator: it must compare two vertices using the distances stored in d[].
 
 For more information about Dijkstra's algorithm refer to [1](https://cp-algorithms.com/graph/dijkstra.html) [2](https://cp-algorithms.com/graph/dijkstra_sparse.html)
+
+## Bellman-Ford Algorithm
+
+Bellman-Ford algorithm is also a single source shortest path (SSSP) algorithm like Dijkstra's algorithm but it can work also with **negative edge weights**. We can detect negative cycle using this algorithm. Time Complexity of this algorithm is **O(V * E)** because in this we have to relaxe all the edges (n - 1) times to propogate the changes. If we can relax a vertex even after (n - 1) operations that means there is a negative cycle and we update its distance to **- infinity** and to propogate this negative change we again need at most (n - 1) cycles of opeartion.
