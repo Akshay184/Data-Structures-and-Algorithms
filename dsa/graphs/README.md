@@ -49,3 +49,13 @@ After find the topological order we can assign each vertex an infinite weight ex
 
 It is similar to **SSSP on DAG** but what we do here is we multiply each edge weight with -1 and then calculate SSSP and after getting the weight array we again multily it by -1.
 
+## Dijkstra's Algorithm
+
+Dijkstra's algorithm is a single source shortest path (SSSP) algorithm with graphs with **non-negative edge weights**.
+
+***Time Complexity*** -
+- The theoretical minimum time complexity1 for the shortest path search problem is **O(VlogV + E)** which is the case when we use ****Fibonacci Heap**** in which the time complexity of insertion is ****O(log(n))**** and updation is ****O(1)****. But Fibonacci heap are not generally used due to their huge constant overhead and their implementaion complexity. 
+
+- We can use data stuctures which can perform both operation insertion and updation in **O(logn)** time. In C++ we have two such data-structure **set and priority queue**. But the problem with priority queue is that it does not support the operation of removing an element that leads to a significant worse factor **log(E)** instead of **log(V)** (although in terms of complexity they are identical).
+
+- We can improve the performance a little bit more if you don't store pairs in the containers, but only the vertex indices. In this case we must overload the comparison operator: it must compare two vertices using the distances stored in d[].
