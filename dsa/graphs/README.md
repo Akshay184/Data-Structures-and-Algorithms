@@ -71,3 +71,20 @@ Bellman-Ford algorithm is also a single source shortest path (SSSP) algorithm li
 Floyd-Warhall is an **all pair shortest path algorithm (APSP)** algorithm with graphs with **non-negative weigths cycle**. Remember graphs can have negative edge weights but not a negative cycle.
 
 Floyd-Warshall used the concept of dynamic programming for calculation the shortest path between two nodes by using the previously calculated distance. Time compleixty of Floyd-Warshall algorithm is **O(n3)**. 
+
+## Bridges And Articulation Points
+
+ A bridge is defined as an edge which, when removed, makes the graph disconnected (or more precisely, increases the number of connected components in the graph).
+ 
+An articulation point (or cut vertex) is defined as a vertex which, when removed along with associated edges, makes the graph disconnected (or more precisely, increases the number of connected components in the graph).
+
+We use the approach of dfs to find both the brides and articulation point in a graph in **O(V + E)** time complexity. We use the concept of intime of node and the low time (i.e. the ancestor to which it can reach via a back edge) and by using so calculate the brides and articulation point.
+
+We can also find the bridges for dynamic graph (assuming the operation is only adding new edges). To get more informatiom refer to [Finding Bridges Online](https://cp-algorithms.com/graph/bridge-searching-online.html)
+
+For detailed explantion of bridges and articulation point refet to -
+- [Bridges](https://cp-algorithms.com/graph/bridge-searching.html)
+- [Bridges Video](https://www.youtube.com/watch?v=ECKTyseo2H8&list=PL2q4fbVm1Ik6DCzm9XZJbNwyHtHGclcEh&index=24&t=0s)
+- [Articulation Points](https://cp-algorithms.com/graph/cutpoints.html)
+- [Articulation Points Video](https://www.youtube.com/watch?v=iGGolqb6gDE&list=PL2q4fbVm1Ik6DCzm9XZJbNwyHtHGclcEh&index=27&t=0s)
+
