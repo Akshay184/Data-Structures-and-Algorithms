@@ -54,7 +54,7 @@ It is similar to **SSSP on DAG** but what we do here is we multiply each edge we
 Dijkstra's algorithm is a single source shortest path (SSSP) algorithm with graphs with **non-negative edge weights**.
 
 ***Time Complexity*** -
-- The theoretical minimum time complexity1 for the shortest path search problem is **O(VlogV + E)** which is the case when we use ****Fibonacci Heap**** in which the time complexity of insertion is ****O(log(n))**** and updation is ****O(1)****. But Fibonacci heap are not generally used due to their huge constant overhead and their implementaion complexity. 
+- The theoretical minimum time complexity1 for the shortest path search problem is **O(VlogV + E)** which is the case when we use ****Fibonacci Heap**** in which the time complexity of insertion is ****O(log(n))****  and updation is ****O(1)****. But Fibonacci heap are not generally used due to their huge constant overhead and their implementaion complexity. 
 
 - We can use data stuctures which can perform both operation insertion and updation in **O(logn)** time. In C++ we have two such data-structure **set and priority queue**. But the problem with priority queue is that it does not support the operation of removing an element that leads to a significant worse factor **log(E)** instead of **log(V)** (although in terms of complexity they are identical).
 
@@ -65,3 +65,9 @@ For more information about Dijkstra's algorithm refer to [1](https://cp-algorith
 ## Bellman-Ford Algorithm
 
 Bellman-Ford algorithm is also a single source shortest path (SSSP) algorithm like Dijkstra's algorithm but it can work also with **negative edge weights**. We can detect negative cycle using this algorithm. Time Complexity of this algorithm is **O(V * E)** because in this we have to relaxe all the edges (n - 1) times to propogate the changes. If we can relax a vertex even after (n - 1) operations that means there is a negative cycle and we update its distance to **- infinity** and to propogate this negative change we again need at most (n - 1) cycles of opeartion.
+
+## Floyd-Warshall Algorithm
+
+Floyd-Warhall is an **all pair shortest path algorithm (APSP)** algorithm with graphs with **non-negative weigths cycle**. Remember graphs can have negative edge weights but not a negative cycle.
+
+Floyd-Warshall used the concept of dynamic programming for calculation the shortest path between two nodes by using the previously calculated distance. Time compleixty of Floyd-Warshall algorithm is **O(n3)**. 
