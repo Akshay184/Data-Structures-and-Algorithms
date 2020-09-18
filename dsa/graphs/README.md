@@ -88,3 +88,11 @@ For detailed explantion of bridges and articulation point refet to -
 - [Articulation Points](https://cp-algorithms.com/graph/cutpoints.html)
 - [Articulation Points Video](https://www.youtube.com/watch?v=iGGolqb6gDE&list=PL2q4fbVm1Ik6DCzm9XZJbNwyHtHGclcEh&index=27&t=0s)
 
+## Strongly Connected Components (Kosaraju's Algorithm)
+
+- Run sequence of depth first search of graph G which will return vertices with increasing exit time tout, i.e. some list order.
+
+- Build transposed graph GT. Run a series of depth (breadth) first searches in the order determined by list order (to be exact in reverse order, i.e. in decreasing order of exit times). Every set of vertices, reached after the next search, will be the next strongly connected component.
+
+**Time Complexity** of the algorithm is **O(n + m)** because it is just two dfs.
+
