@@ -96,3 +96,12 @@ For detailed explantion of bridges and articulation point refet to -
 
 **Time Complexity** of the algorithm is **O(n + m)** because it is just two dfs.
 
+## Travelling Salesman Problem 
+
+TSP is a **NP-hard** and is not a NP-complete problem. In this problem we have to visit each city once and then return back to the starting city. Since this is a
+NP-hard problem we can check for all the permutation and find the minimum sum path. Therefore the time complexity is **O(!n)**.
+
+But we can optimize this problem using DP to solve it in **O(n2 * 2^n)** by storing the -
+- The city that is visited last
+- The mask which keeps the record of all the visited city till now.
+
