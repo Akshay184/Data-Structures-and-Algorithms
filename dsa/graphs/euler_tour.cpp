@@ -88,6 +88,12 @@ bool eulerian_path()
 		return false;
 	}
 	
+	// if there is no path
+	if(!is_path())
+	{
+		return false;
+	}
+	
 	// starting node of the euler tour
 	int first = startNode();
 	
