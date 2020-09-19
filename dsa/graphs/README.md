@@ -105,3 +105,19 @@ But we can optimize this problem using DP to solve it in **O(n2 * 2^n)** by stor
 - The city that is visited last
 - The mask which keeps the record of all the visited city till now.
 
+## Eulerian Path
+
+A Eulerian path is a path in a graph that passes through all of its edges exactly once. A Eulerian cycle is a Eulerian path that is a cycle. Thera are different conditions for directed and undirected graph to check whether there is eulerian path or cycle.
+
+**For Undirected Graphs** - 
+- If degree of all the nodes in the graph is even then their exits a eulerian cycle. In this case any node can be starting node.
+- If degree of two nodes are odd and the remaining are even then their exits a eulerian path only. In this case the node wih odd degree must be starting and the ending nodes.
+
+**For Directed Graphs** -
+- If in and out degree of all the nodes are same then their exits a eulerian cycle. In this case any node can be starting node.
+- If indegree - outdegree = 1 for one node and outderee - indegree = 1 for one node and for all the remaining nodes in and out degree must be same then their exits an eulerian path. In this case the node with 1 extra outdegree must be starting node and the node with one extra indegree must be ending node.
+
+**Time Compleixy** for Hierholzer's algorithm is **O(E)** as we have to traverse all the edges. There is one more algorithm Fleury's algorithm but it can take upto O(E2) time.
+I have implemented the algorithm for both directed and undirected graph using recursive and iterative method respectively.
+
+For more information refer to [cp-algorithm](https://cp-algorithms.com/graph/euler_path.html) and [youtube](https://www.youtube.com/watch?v=09_LlHjoEiY&t=14479s)
